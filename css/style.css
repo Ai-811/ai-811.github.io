@@ -1,14 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@700&family=Lobster&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+/* Googleフォント */
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&family=Zen+Kurenaido&display=swap');
+
+/* レスポンシブ（スマホ） */
+@media screen and (max-width: 480px) {
 
 * {
   padding: 0;
   margin: 0;
-  }
+}
 
 body {
-  background-color: rgb(225, 254, 255);
+  font-family: 'New Tegomin', serif;
+  font-family: 'Zen Kurenaido', sans-serif;
+  background-color: white;
   width: 100%;
   height: 100%;
   margin-left: auto;
@@ -20,81 +24,35 @@ body {
 /* ヘッダー */
 
 header {
-  height: 80px;
-  background-color: rgba(255, 255, 255, 0.8);
-  display: flex;
+  /* width: 100px; */
+  height: 90px;
+  background-color: white;
+  box-shadow: 0px 3px 10px #83E9FF;
+  z-index: 100;
   /* imgの横にnav */
   position: fixed;
   top: 0;
+  right: 0;
   width: 100%;
   /* 上部固定（widthつけないとレイアウト崩れる） */
 }
 
-/* ヘッダー左のアイコン */
-header img {
-  margin: 5px;
-  /* margin-right: 500px; */
-}
-
-nav {
-  width: 100%;
-  margin-top: 20px;
-}
-
-ul {
-  font-family: 'Lobster', cursive;
-  list-style-type: none;
+.navList {
+  list-style: none;
+  font-size: 32px;
   display: flex;
-  justify-content: space-evenly;
-  /* 横に等間隔に並べる */
-  flex-wrap: wrap;
-  /* スマホ表示折り返し用 */
+  justify-content: center;
+  align-items: center;
 }
 
-.current {
-  margin-left: 500px;
-}
-
-li {
-  font-size: 30px;
+nav li {
+  color: #515151;
+  margin: 21px;
 }
 
 a {
+  color: #515151;
   text-decoration: none;
-  color: black;
-}
-
-/* liの下に線(アニメーション) */
-.gnavi li a{
-  /*線の基点とするためrelativeを指定*/
-position: relative;
-}
-
-/* .gnavi li.current a, */
-.gnavi li a:hover{
-color:rgb(0, 143, 148);
-}
-
-.gnavi li a::after {
-  content: '';
-  /*絶対配置で線の位置を決める*/
-  position: absolute;
-  bottom: -10%;
-  left: 0%;
-  /*線の形状*/
-  width: 100%;
-  height: 2px;
-  background:rgb(0, 143, 148);
-  /*アニメーションの指定*/
-  transition: all .3s;
-  transform: scale(0, 1);/*X方向0、Y方向1*/
-  transform-origin: left top;/*左上基点*/
-}
-
-/*現在地とhoverの設定*/
-/* .gnavi li.current a::after, */
-.gnavi li a:hover::after {
-    transform: scale(1, 1);/*X方向にスケール拡大*/
 }
 
 /* トップ */
@@ -103,295 +61,892 @@ color:rgb(0, 143, 148);
   margin-bottom: 150px;
 }
 
-.topimg {
-  margin-top: 100px;
-  margin-bottom: 20px;
-  border: double 10px black;
-}
-
-/* トップ以降 */
-
-.main {
-  margin-left: 250px;
-  margin-right: 250px;
-  margin-top: 70px;
-}
-
-/* about */
-
-.about {
-  text-align: left;
-  overflow: hidden;
-  /* clearとmarginは併用できない（clear前のsectionでoverflow:hiddenが必要） */
+.topBack {
+  background-image: url(../imgs/top-photo.jpg);
+  background-repeat: no-repeat;
+  width: 300vw;
+  height: 100vh;
+  background-size: cover;
+  z-index: -1;
+  position: relative;
 }
 
 h1 {
-  text-align: left;
-  font-family: 'Lobster', cursive;
-  font-size: 40px;
-  padding-bottom: 10px;
-  border-bottom: solid 2px black;
-  margin-bottom: 40px;
-}
-
-.abouticon {
-  border-radius: 50%;
-  float: left;
-}
-
-/* プロフィールタグ */
-.abouttag {
-  margin-left: 300px;
-}
-
-/* タグのテキスト */
-p1 {
-  background-color: black;
-  color: white;
-  font-size: 20px;
-  font-family: 'Kaisei Decol', serif;
-  border-radius: 3em;
-  border-left: solid 5px black;
-  border-right: solid 5px black;
-  margin-right: 20px;
-  margin-bottom: 10px;
-  white-space: nowrap;
-  /* 改行させない */
-  display: inline-block;
-  /* margin-bottomに対応（インライン要素には効かない） */
-}
-
-/* skill */
-
-.section {
-  margin-top: 150px;
-}
-
-.skill {
-  display: flex;
-  margin-bottom: 40px;
-}
-
-/* skillのアイコン */
-.icon {
-  display: inline-block;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-/* skillのテキスト */
-.skillp {
-  width: 200px;
-}
-
-/* skillのテキスト上 */
-p2 {
-  font-size: 30px;
-  font-family: 'Kaisei Decol', serif;
-  margin-bottom: 10px;
-  display: inline-block;
-  vertical-align: top;
-}
-
-/* skillのテキスト下 */
-p3 {
-  font-size: 30px;
-  font-family: 'New Tegomin', serif;
-  display: inline-block;
-  vertical-align: top;
-  white-space: nowrap;
-}
-
-p4 {
-  font-size: 20px;
-  font-family: 'Kaisei Decol', serif;
-}
-
-/* works */
-
-/* worksのimg */
-.works {
-  margin-bottom: 30px;
-}
-
-p5 {
-  font-size: 30px;
-  font-family: 'Kaisei Decol', serif;
-}
-
-/* view more */
-p6 {
-  color: white;
-  background-color: black;
-  border-radius: 3em;
-  padding: 10px;
-  font-size: 30px;
-  font-family: 'Kaisei Decol', serif;
-  margin-left: 500px;
-}
-
-p6:hover {
-  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
-}
-
-/* contact */
-
-.contact {
-  margin-right: 100px;
-}
-
-/* footer */
-
-footer {
-  clear: left;
-  margin-top: 150px;
-  font-size: 20px;
-  font-family: 'Kaisei Decol', serif;
-  text-align: center;
-  margin-right: 50px;
-  background-color: rgb(0, 143, 148);
+  color: #83E9FF;
+  font-size: 128px;
+  font-weight: normal;
   width: 100%;
-  height: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-/* footerのテキスト */
-p {
-  display: inline-block;
-  margin-top: 80px;
-  color: white;
+/* about以降 */
+
+.main {
+  color: #515151;
+  margin-left: 120px;
+  margin-right: 120px;
 }
 
-figcaption {
-  font-size: 15px;
-}
-
-/* ページトップにスクロール(アニメーション) */
-/*リンクを右下に固定*/
-#page-top {
-	position: fixed;
-	right: 10px;
-	bottom:10px;
-	z-index: 2;
-    /*はじめは非表示*/
-	opacity: 0;
-	transform: translateY(100px);
-}
-
-/*　上に上がる動き　*/
-
-#page-top.UpMove{
-	animation: UpAnime 0.5s forwards;
-}
-@keyframes UpAnime{
-  from {
-    opacity: 0;
-	transform: translateY(100px);
-  }
-  to {
-    opacity: 1;
-	transform: translateY(0);
-  }
-}
-
-/*　下に下がる動き　*/
-
-#page-top.DownMove{
-	animation: DownAnime 0.5s forwards;
-}
-@keyframes DownAnime{
-  from {
-  	opacity: 1;
-	transform: translateY(0);
-  }
-  to {
-  	opacity: 1;
-	transform: translateY(100px);
-  }
-}
-
-
-/* works.html */
-
-.worksmain {
-  margin-left: 250px;
-  margin-right: 250px;
-  margin-top: 160px;
-}
-
-.works:hover {
-  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
-}
-
-/* back to top */
-p7 {
-  color: white;
-  background-color: black;
-  border-radius: 3em;
-  padding: 10px;
-  font-size: 20px;
-  font-family: 'Kaisei Decol', serif;
-  display: inline-block;
-  position: fixed;
-  left: 150px;
-  top: 120px;
-}
-
-p7:hover {
-  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
-}
-
-.workstext {
-  font-size: 15px;
-  display: inline-block;
-  width: 500px;
+.main section {
   margin-bottom: 150px;
 }
 
+/* アバウト */
+
+.about, .works, .contact {
+  display: flex;
+}
+
+.aboutImg {
+  margin-right: 80px;
+}
+
+.aboutText {
+  text-align: left;
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: normal;
+  text-align: left;
+  width: 450px;
+  height: 70px;
+  border-bottom: solid 3px;
+  margin-bottom: 50px;
+}
+
+h3 {
+  font-size: 36px;
+  font-weight: normal;
+  width: 200px;
+  margin-bottom: 50px;
+  margin-right: 80px;
+  display: inline-block;
+}
+
+h3, .ai {
+  text-shadow: 0px 4px 4px gray;
+}
+
+.aboutText p {
+  font-size: 20px;
+  display: inline-block;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+/* スキル */
+
+.skillText {
+  text-align: left;
+}
+
+h4 {
+  font-size: 48px;
+  font-weight: normal;
+  width: 900px;
+  height: 70px;
+  border-bottom: solid 3px;
+  margin-bottom: 50px;
+}
+
+.skillList {
+  display: flex;
+}
+
+.listL {
+  margin-right: 250px;
+}
+
+.skillText li {
+  font-size: 36px;
+  list-style: none;
+  white-space: nowrap;
+}
+
+/* ワークス */
+
+.worksText {
+  font-size: 32px;
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.worksText h3 {
+  display: block;
+  margin-left: 90px;
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+
+.worksText a {
+  display: inline-block;
+  color: #515151;
+  border-bottom: solid 2px;
+}
+
+.worksImg {
+  margin-left: 80px;
+}
+
+/* works.html */
+
+.back {
+  font-size: 32px;
+  position: fixed;
+  top: 30px;
+  left: 150px;
+}
+
+.back a:hover {
+  color: #83E9FF;
+}
+
+.works-main {
+  color: #515151;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 120px;
+}
+
+h5 {
+  font-size: 48px;
+  font-weight: normal;
+  margin-bottom: 100px;
+}
+
+.works-div {
+  font-size: 16px;
+  margin-bottom: 200px;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+
+.works-div figure:first-child {
+  margin-right: 80px;
+}
+
+.works-div img {
+  margin-bottom: 50px;
+}
+
+.works-div img:hover {
+  opacity: .5;
+}
+
+.yoko {
+  width: 450px;
+  height: auto;
+}
+
+.shikaku {
+  width: 400px;
+  height: auto;
+}
+
+.tate {
+  width: 350px;
+  height: auto;
+}
+
+/* コンタクト */
+
+.timeline {
+  width: 400px;
+  padding: 10px;
+  margin-right: 60px;
+}
+
+.icon {
+  display: flex;
+}
+
+.contactText img {
+  margin: 50px;
+}
+
+/* .contactText img:hover {
+  opacity: .5;
+} */
+
+.icon a {
+  height: 128px;
+}
+
+/* フッター */
+
+footer {
+  background-color: #515151;
+  width: 100%;
+  height: 150px;
+  position: relative;
+}
+
+footer p {
+  color: #83E9FF;
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 
-/* スマホ用設定 */
+/* 動きをつける */
 
-@media screen and (max-width:400px) {
+/*========= ローディング画面のためのCSS ===============*/
+#splash {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: #333;
+	z-index: 9999999;
+	text-align:center;
+	color: #83E9FF;
+}
 
-  /* index.html */
+#splash-logo {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/*========= 画面遷移のためのCSS ===============*/
+
+/*画面遷移アニメーション*/
+.splashbg{
+    display: none;
+}
+
+/*bodyにappearクラスがついたら出現*/
+body.appear .splashbg{
+    display: block;
+    content: "";
+    position:fixed;
+	z-index: 999;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+	left: 0;
+    transform: scaleX(0);
+    background-color: #333;/*伸びる背景色の設定*/
+	animation-name:PageAnime;
+	animation-duration:1.2s;
+	animation-timing-function:ease-in-out;
+	animation-fill-mode:forwards;
+}
+
+@keyframes PageAnime{
+	0% {
+		transform-origin:left;
+		transform:scaleX(0);
+	}
+	50% {
+		transform-origin:left;
+		transform:scaleX(1);
+	}
+	50.001% {
+		transform-origin:right;
+	}
+	100% {
+		transform-origin:right;
+		transform:scaleX(0);
+	}
+}
+
+/*画面遷移の後現れるコンテンツ設定*/
+#container{
+	opacity: 0;/*はじめは透過0に*/
+}
+
+/*bodyにappearクラスがついたら出現*/
+body.appear #container{
+	animation-name:PageAnimeAppear;
+	animation-duration:1s;
+	animation-delay: 0.8s;
+	animation-fill-mode:forwards;
+	opacity: 0;
+}
+
+@keyframes PageAnimeAppear{
+	0% {
+	opacity: 0;
+	}
+	100% {
+	opacity: 1;
+}
+}
+
+/*==================================================
+　5-3-3 左から右に線が伸びる（下部）
+===================================*/
+.navList li a{
+  /*線の基点とするためrelativeを指定*/
+position: relative;
+}
+
+.navList li a:hover{
+color: #83E9FF;
+}
+
+.worksText a:hover{
+  color: #83E9FF;
+}
+  
+.navList li a::after {
+  content: '';
+  /*絶対配置で線の位置を決める*/
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  /*線の形状*/
+  width: 80%;
+  height: 2px;
+  background: #83E9FF;
+  /*アニメーションの指定*/
+  transition: all .3s;
+  transform: scale(0, 1);/*X方向0、Y方向1*/
+  transform-origin: left top;/*左上基点*/
+}
+
+/*現在地とhoverの設定*/
+.navList li a:hover::after {
+    transform: scale(1, 1);/*X方向にスケール拡大*/
+}
+
+/* モーダルウィンドウ */
+
+/*全て共通：hideエリアをはじめは非表示*/
+.hide-area{
+	display: none;
+}
+
+/*全て共通：モーダルのボタンの色を変更したい場合*/
+.modaal-close:after, 
+.modaal-close:before{
+	background:white;	
+}
+
+.modaal-close:focus:after,
+.modaal-close:focus:before,
+.modaal-close:hover:after,
+.modaal-close:hover:before{
+	background:#515151;
+}
+
+.mdl-yoko {
+  width: 250px;
+  height: auto;
+}
+
+.mdl-shikaku {
+  width: 200px;
+  height: auto;
+}
+
+.mdl-tate {
+  width: 150px;
+  height: auto;
+}
+
+.mdl-a:hover {
+  opacity: .5;
+}
+
+#mdl-img {
+  box-shadow: 0px 5px 10px 0px gray;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  vertical-align: top;
+}
+
+.mdl-p {
+  font-size: 16px;
+  line-height: 1.8;
+  letter-spacing: .05em;
+  margin-top: 50px;
+}
+}
+
+/* レスポンシブ（PC） */
+@media screen and (min-width: 481px) {
+
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  
   body {
-    width: 400px;
+    font-family: 'New Tegomin', serif;
+    font-family: 'Zen Kurenaido', sans-serif;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-x: hidden;
+    text-align: center;
   }
-
-  .current {
-    margin-left: 300px;
+  
+  /* ヘッダー */
+  
+  header {
+    /* width: 100px; */
+    height: 90px;
+    background-color: white;
+    box-shadow: 0px 3px 10px #83E9FF;
+    z-index: 100;
+    /* imgの横にnav */
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    /* 上部固定（widthつけないとレイアウト崩れる） */
   }
-
+  
+  .navList {
+    list-style: none;
+    font-size: 32px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  nav li {
+    color: #515151;
+    margin: 21px;
+  }
+  
+  a {
+    color: #515151;
+    text-decoration: none;
+  }
+  
+  /* トップ */
+  
   .top {
-    margin-top: 40px;
-    margin-left: 60px;
+    margin-bottom: 150px;
   }
-
-  .about {
-    width: 800px;
-    margin-left: -180px;
+  
+  .topBack {
+    background-image: url(../imgs/top-photo.jpg);
+    background-repeat: no-repeat;
+    /* width: 100%; */
+    height: 100vh;
+    background-size: cover;
+    z-index: -1;
+    position: relative;
   }
-
-  .section {
-    width: 800px;
-    margin-left: -180px;
+  
+  h1 {
+    color: #83E9FF;
+    font-size: 128px;
+    font-weight: normal;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
-
-  footer {
-    width: 930px;
+  
+  /* about以降 */
+  
+  .main {
+    color: #515151;
+    margin-left: 180px;
+    margin-right: 180px;
   }
-
+  
+  .main section {
+    margin-bottom: 150px;
+  }
+  
+  /* アバウト */
+  
+  .about, .works, .contact {
+    display: flex;
+  }
+  
+  .aboutImg {
+    margin-right: 80px;
+  }
+  
+  .aboutText {
+    text-align: left;
+  }
+  
+  h2 {
+    font-size: 48px;
+    font-weight: normal;
+    text-align: left;
+    width: 450px;
+    height: 70px;
+    border-bottom: solid 3px;
+    margin-bottom: 50px;
+  }
+  
+  h3 {
+    font-size: 36px;
+    font-weight: normal;
+    width: 200px;
+    margin-bottom: 50px;
+    margin-right: 80px;
+    display: inline-block;
+  }
+  
+  h3, .ai {
+    text-shadow: 0px 4px 4px gray;
+  }
+  
+  .aboutText p {
+    font-size: 20px;
+    display: inline-block;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+  
+  /* スキル */
+  
+  .skillText {
+    text-align: left;
+  }
+  
+  h4 {
+    font-size: 48px;
+    font-weight: normal;
+    width: 900px;
+    height: 70px;
+    border-bottom: solid 3px;
+    margin-bottom: 50px;
+  }
+  
+  .skillList {
+    display: flex;
+  }
+  
+  .listL {
+    margin-right: 250px;
+  }
+  
+  .skillText li {
+    font-size: 36px;
+    list-style: none;
+  }
+  
+  /* ワークス */
+  
+  .worksText {
+    font-size: 32px;
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .worksText h3 {
+    display: block;
+    margin-left: 90px;
+    margin-bottom: 10px;
+    white-space: nowrap;
+  }
+  
+  .worksText a {
+    display: inline-block;
+    color: #515151;
+    border-bottom: solid 2px;
+  }
+  
+  .worksImg {
+    margin-left: 80px;
+  }
+  
   /* works.html */
-  p7 {
-    margin-left: -100px;
+  
+  .back {
+    font-size: 32px;
+    position: fixed;
+    top: 30px;
+    left: 150px;
   }
-
-  .worksmain {
+  
+  .back a:hover {
+    color: #83E9FF;
+  }
+  
+  .works-main {
+    color: #515151;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 120px;
+  }
+  
+  h5 {
+    font-size: 48px;
+    font-weight: normal;
+    margin-bottom: 100px;
+  }
+  
+  .works-div {
+    font-size: 16px;
+    margin-bottom: 200px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+  }
+  
+  .works-div figure:first-child {
+    margin-right: 80px;
+  }
+  
+  .works-div img {
+    margin-bottom: 50px;
+  }
+  
+  .works-div img:hover {
+    opacity: .5;
+  }
+  
+  .yoko {
+    width: 450px;
+    height: auto;
+  }
+  
+  .shikaku {
     width: 400px;
-    margin-left: 260px;
+    height: auto;
   }
-
-  .workstext {
-    margin-left: -50px;
+  
+  .tate {
+    width: 350px;
+    height: auto;
   }
+  
+  /* コンタクト */
+  
+  .timeline {
+    max-width: 40%;
+    padding: 10px;
+    margin-right: 80px;
+  }
+  
+  .icon {
+    display: flex;
+  }
+  
+  .contactText img {
+    margin: 50px;
+  }
+  
+  /* .contactText img:hover {
+    opacity: .5;
+  } */
+  
+  .icon a {
+    height: 128px;
+  }
+  
+  /* フッター */
+  
+  footer {
+    background-color: #515151;
+    height: 150px;
+    position: relative;
+  }
+  
+  footer p {
+    color: #83E9FF;
+    font-size: 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  
+  /* 動きをつける */
+  
+  /*========= ローディング画面のためのCSS ===============*/
+  #splash {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #333;
+    z-index: 9999999;
+    text-align:center;
+    color: #83E9FF;
+  }
+  
+  #splash-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  /*========= 画面遷移のためのCSS ===============*/
+  
+  /*画面遷移アニメーション*/
+  .splashbg{
+      display: none;
+  }
+  
+  /*bodyにappearクラスがついたら出現*/
+  body.appear .splashbg{
+      display: block;
+      content: "";
+      position:fixed;
+    z-index: 999;
+      width: 100%;
+      height: 100vh;
+      top: 0;
+    left: 0;
+      transform: scaleX(0);
+      background-color: #333;/*伸びる背景色の設定*/
+    animation-name:PageAnime;
+    animation-duration:1.2s;
+    animation-timing-function:ease-in-out;
+    animation-fill-mode:forwards;
+  }
+  
+  @keyframes PageAnime{
+    0% {
+      transform-origin:left;
+      transform:scaleX(0);
+    }
+    50% {
+      transform-origin:left;
+      transform:scaleX(1);
+    }
+    50.001% {
+      transform-origin:right;
+    }
+    100% {
+      transform-origin:right;
+      transform:scaleX(0);
+    }
+  }
+  
+  /*画面遷移の後現れるコンテンツ設定*/
+  #container{
+    opacity: 0;/*はじめは透過0に*/
+  }
+  
+  /*bodyにappearクラスがついたら出現*/
+  body.appear #container{
+    animation-name:PageAnimeAppear;
+    animation-duration:1s;
+    animation-delay: 0.8s;
+    animation-fill-mode:forwards;
+    opacity: 0;
+  }
+  
+  @keyframes PageAnimeAppear{
+    0% {
+    opacity: 0;
+    }
+    100% {
+    opacity: 1;
+  }
+  }
+  
+  /*==================================================
+  　5-3-3 左から右に線が伸びる（下部）
+  ===================================*/
+  .navList li a{
+    /*線の基点とするためrelativeを指定*/
+  position: relative;
+  }
+  
+  .navList li a:hover{
+  color: #83E9FF;
+  }
+  
+  .worksText a:hover{
+    color: #83E9FF;
+  }
+    
+  .navList li a::after {
+    content: '';
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    /*線の形状*/
+    width: 80%;
+    height: 2px;
+    background: #83E9FF;
+    /*アニメーションの指定*/
+    transition: all .3s;
+    transform: scale(0, 1);/*X方向0、Y方向1*/
+    transform-origin: left top;/*左上基点*/
+  }
+  
+  /*現在地とhoverの設定*/
+  .navList li a:hover::after {
+      transform: scale(1, 1);/*X方向にスケール拡大*/
+  }
+  
+  /* モーダルウィンドウ */
+  
+  /*全て共通：hideエリアをはじめは非表示*/
+  .hide-area{
+    display: none;
+  }
+  
+  /*全て共通：モーダルのボタンの色を変更したい場合*/
+  .modaal-close:after, 
+  .modaal-close:before{
+    background:white;	
+  }
+  
+  .modaal-close:focus:after,
+  .modaal-close:focus:before,
+  .modaal-close:hover:after,
+  .modaal-close:hover:before{
+    background:#515151;
+  }
+  
+  .mdl-yoko {
+    width: 250px;
+    height: auto;
+  }
+  
+  .mdl-shikaku {
+    width: 200px;
+    height: auto;
+  }
+  
+  .mdl-tate {
+    width: 150px;
+    height: auto;
+  }
+  
+  .mdl-a:hover {
+    opacity: .5;
+  }
+  
+  #mdl-img {
+    box-shadow: 0px 5px 10px 0px gray;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    vertical-align: top;
+  }
+  
+  .mdl-p {
+    font-size: 16px;
+    line-height: 1.8;
+    letter-spacing: .05em;
+    margin-top: 50px;
+  }  
 }
