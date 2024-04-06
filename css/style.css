@@ -469,6 +469,13 @@ color: #83E9FF;
   vertical-align: top;
 }
 
+.mdl-lang {
+  font-size: 20px;
+  margin-top: 50px;
+  border-left: #515151 solid 8px;
+  padding-left: 8px;
+}  
+
 .mdl-p {
   font-size: 16px;
   line-height: 1.8;
@@ -942,6 +949,13 @@ color: #83E9FF;
     margin-bottom: 20px;
     vertical-align: top;
   }
+
+	.mdl-lang {
+    font-size: 20px;
+    margin-top: 50px;
+    border-left: #515151 solid 8px;
+    padding-left: 8px;
+	}  
   
   .mdl-p {
     font-size: 16px;
