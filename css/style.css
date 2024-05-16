@@ -63,7 +63,7 @@
   .topBack {
     background-image: url(../imgs/top-photo.jpg);
     background-repeat: no-repeat;
-    width: 300vw;
+    width: 400vw;
     height: 250vh;
     background-size: cover;
     z-index: -1;
@@ -102,7 +102,7 @@
   }
 
   .aboutImg {
-    margin-right: 80px;
+    display: none;
   }
 
   .aboutText {
@@ -110,22 +110,19 @@
   }
 
   h2 {
-    font-size: 48px;
+    font-size: 5rem;
     font-weight: normal;
     text-align: left;
-    width: 450px;
-    height: 70px;
+    width: 330vw;
     border-bottom: solid 3px;
     margin-bottom: 50px;
   }
 
   h3 {
-    font-size: 36px;
+    font-size: 4rem;
     font-weight: normal;
-    width: 200px;
     margin-bottom: 50px;
     margin-right: 80px;
-    display: inline-block;
   }
 
   h3,
@@ -134,7 +131,7 @@
   }
 
   .aboutText p {
-    font-size: 20px;
+    font-size: 3rem;
     display: inline-block;
     margin-right: 30px;
     margin-bottom: 30px;
@@ -148,10 +145,9 @@
   }
 
   h4 {
-    font-size: 48px;
+    font-size: 5rem;
     font-weight: normal;
-    width: 900px;
-    height: 70px;
+    width: 330vw;
     border-bottom: solid 3px;
     margin-bottom: 50px;
   }
@@ -161,11 +157,11 @@
   }
 
   .listL {
-    margin-right: 250px;
+    margin-right: 150px;
   }
 
   .skillText li {
-    font-size: 36px;
+    font-size: 4rem;
     list-style: none;
     white-space: nowrap;
   }
@@ -194,7 +190,7 @@
   }
 
   .worksImg {
-    margin-left: 80px;
+    display: none;
   }
 
   /* works.html */
@@ -266,9 +262,10 @@
   /* コンタクト */
 
   .timeline {
-    width: 400px;
+    /* width: 400px;
     padding: 10px;
-    margin-right: 60px;
+    margin-right: 60px; */
+    display: none;
   }
 
   .icon {
@@ -291,14 +288,14 @@
 
   footer {
     background-color: #515151;
-    width: 1120px;
-    height: 150px;
+    width: 400vw;
+    height: 50vh;
     position: relative;
   }
 
   footer p {
     color: #83E9FF;
-    font-size: 24px;
+    font-size: 3rem;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -320,6 +317,7 @@
   }
 
   #splash-logo {
+    font-size: 3rem;
     position: absolute;
     top: 50%;
     left: 50%;
