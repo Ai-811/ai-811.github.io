@@ -65,7 +65,7 @@ a {
   background-image: url(../imgs/top-photo.jpg);
   background-repeat: no-repeat;
   width: 300vw;
-  height: 100vh;
+  height: 200vh;
   background-size: cover;
   z-index: -1;
   position: relative;
