@@ -169,7 +169,7 @@
   /* ワークス */
 
   .worksText {
-    font-size: 32px;
+    font-size: 4rem;
     display: inline-block;
     margin-right: 10px;
     margin-bottom: 30px;
@@ -262,9 +262,6 @@
   /* コンタクト */
 
   .timeline {
-    /* width: 400px;
-    padding: 10px;
-    margin-right: 60px; */
     display: none;
   }
 
@@ -273,15 +270,16 @@
   }
 
   .contactText img {
-    margin: 50px;
+    margin: 80px;
+    width: 50vw;
   }
-
-  /* .contactText img:hover {
-  opacity: .5;
-} */
 
   .icon a {
     height: 128px;
+  }
+
+  figcaption {
+    font-size: 3rem;
   }
 
   /* フッター */
