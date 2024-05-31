@@ -196,10 +196,10 @@
   /* works.html */
 
   .back {
-    font-size: 32px;
+    font-size: 3rem;
     position: fixed;
-    top: 30px;
-    left: 100px;
+    top: 250px;
+    left: 200px;
   }
 
   .back a:hover {
@@ -213,9 +213,9 @@
   .works-main {
     color: #515151;
     width: 80%;
-    margin-left: 400px;
+    margin-left: 550px;
     margin-right: auto;
-    margin-top: 120px;
+    margin-top: 300px;
   }
 
   h5 {
